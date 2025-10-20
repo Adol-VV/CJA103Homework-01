@@ -11,6 +11,8 @@ public class Homework2_3 {
 //			DDDD
 //			EEEEE
 //			FFFFFF
+		
+		
 		for(int i = 0 ; i < 6; i++) {
 			for(int n = 0; n<=i;n++) {
 				System.out.print((char)(i + 'A'));
