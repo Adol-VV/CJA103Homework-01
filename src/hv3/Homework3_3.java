@@ -14,57 +14,57 @@ public class Homework3_3 {
 		(提示:Scanner)
 		(進階挑戰:輸入不要的數字後,直接亂數印出6個號碼且不得重複)*/
 		int[] number = new int[49];
-		Scanner sc = new Scanner(System.in);
-		
-		for(int i = 0; i < number.length; i++) {
-			number[i] = i + 1;
-		}
-		
-		System.out.println("輸入不想要的數字1~9：");
-		int dislike = sc.nextInt();
-		//把不喜歡的數字剔除
-		int[] avalibleNumber = new int[49];
-		int count = 0;
-		for(int i = 0; i < number.length; i++) {
-			if(!String.valueOf(number[i]).contains(String.valueOf(dislike))) {
-				avalibleNumber[count] = number[i] ;
-				count ++;
+		try (Scanner sc = new Scanner(System.in)) {
+			for(int i = 0; i < number.length; i++) {
+				number[i] = i + 1;
 			}
-		}
-		System.out.println("可選號碼：");
-		for(int i = 0 ; i < count ; i++ ) {
-			System.out.print(avalibleNumber[i] + "  ");
-		}
-		System.out.println();
-		System.out.println("總數：" + count);
-		
-		//隨機6個
-		Random rand = new Random();
-		int[] chosen = new int[6];
-		int choseCount = 0;
-		
-		while(choseCount < 6) {
-			int x = avalibleNumber[rand.nextInt(count)];
 			
-			//檢查是否已獲得
-			boolean isGet = false;
-			for(int i = 0; i < choseCount ; i++) {
-				if(chosen[i] == x ) {
-					isGet = true;
-					break;
+			System.out.println("輸入不想要的數字1~9：");
+			int dislike = sc.nextInt();
+			//把不喜歡的數字剔除
+			int[] avalibleNumber = new int[49];
+			int count = 0;
+			for(int i = 0; i < number.length; i++) {
+				if(!String.valueOf(number[i]).contains(String.valueOf(dislike))) {
+					avalibleNumber[count] = number[i] ;
+					count ++;
 				}
 			}
-			
-			if(!isGet) {
-				chosen[choseCount] = x;
-				choseCount ++;
+			System.out.println("可選號碼：");
+			for(int i = 0 ; i < count ; i++ ) {
+				System.out.print(avalibleNumber[i] + "  ");
 			}
+			System.out.println();
+			System.out.println("總數：" + count);
 			
-		}
-		Arrays.sort(chosen);
-		System.out.print("隨機選出的6個號碼：");
-		for(int i = 0 ;i < choseCount; i ++) {
-			System.out.print(chosen[i] +"  ");
+			//隨機6個
+			Random rand = new Random();
+			int[] chosen = new int[6];
+			int choseCount = 0;
+			
+			while(choseCount < 6) {
+				int x = avalibleNumber[rand.nextInt(count)];
+				
+				//檢查是否已獲得
+				boolean isGet = false;
+				for(int i = 0; i < choseCount ; i++) {
+					if(chosen[i] == x ) {
+						isGet = true;
+						break;
+					}
+				}
+				
+				if(!isGet) {
+					chosen[choseCount] = x;
+					choseCount ++;
+				}
+				
+			}
+			Arrays.sort(chosen);
+			System.out.print("隨機選出的6個號碼：");
+			for(int i = 0 ;i < choseCount; i ++) {
+				System.out.print(chosen[i] +"  ");
+			}
 		}
 		
 	}
