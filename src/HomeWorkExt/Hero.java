@@ -1,6 +1,6 @@
 package HomeWorkExt;
 
-public abstract class Hero implements HeroBase{
+public class Hero implements HeroBase{
 	// 省略 getter/setter...
 	
 	private String name;
