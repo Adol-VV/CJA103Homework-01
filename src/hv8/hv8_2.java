@@ -1,6 +1,9 @@
 package hv8;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -30,6 +33,7 @@ public class hv8_2 {
 //		• 承上,不僅能讓班次編號由大排到小印出, 還可以不重複印出Train物件
 //
 //		• (以上三題請根據使用的集合,練習各種取值寫法,如迭代器、for迴圈或foreach等)
+		//不重複
 		Set hs = new HashSet();
 		hs.add(tr1);
 		hs.add(tr2);
@@ -38,20 +42,36 @@ public class hv8_2 {
 		hs.add(tr5);
 		hs.add(tr6);
 		hs.add(tr7);
-		for(Object obj : hs) {
-			System.out.println(obj.toString());
+		Iterator it = hs.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+			
+		}
+		System.out.println("******************");
+		//大到小
+		List<Train> lt = new ArrayList<>();
+		lt.add(tr1);
+		lt.add(tr2);
+		lt.add(tr3);
+		lt.add(tr4);
+		lt.add(tr5);
+		lt.add(tr6);
+		lt.add(tr7);
+		lt.sort(null);
+		for(int i = 0 ; i < lt.size();i++) {
+			System.out.println(lt.get(i));
 		}
 		System.out.println("******************");
 		// 不重複大到小
-		Set set = new TreeSet();
-		set.add(tr1);
-		set.add(tr2);
-		set.add(tr3);
-		set.add(tr4);
-		set.add(tr5);
-		set.add(tr6);
-		set.add(tr7);
-		for(Object obj : set) {
+		Set ts = new TreeSet();
+		ts.add(tr1);
+		ts.add(tr2);
+		ts.add(tr3);
+		ts.add(tr4);
+		ts.add(tr5);
+		ts.add(tr6);
+		ts.add(tr7);
+		for(Object obj : ts) {
 			System.out.println(obj.toString());
 		}
 		

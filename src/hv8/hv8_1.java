@@ -52,7 +52,7 @@ public class hv8_1 {
 		};
 		System.out.println();
 	}
-	private void printForeach(Collection<Object> element) {
+	private void printFor(Collection<Object> element) {
 		System.out.println("*****for*****");
 		List<Object> count = new ArrayList<Object>(element);
 		for(int i = 0 ; i < count.size();i++) {
@@ -61,7 +61,7 @@ public class hv8_1 {
 		
 		System.out.println();
 	}
-	private void printFor(Collection<Object> element) {
+	private void printForeach(Collection<Object> element) {
 		
 		System.out.println("*****foreach*****");
 		for(Object obj : element) {
